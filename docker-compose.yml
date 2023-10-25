@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+  clustered-data_warehouse:
+    image: ekenedian/nibss-instant-pay:1.0.0
+    ports:
+      - "7071:7070"
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 50s
+        max_attempts: 3
+        window: 120s
+

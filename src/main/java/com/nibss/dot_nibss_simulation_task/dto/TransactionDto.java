@@ -1,23 +1,25 @@
 package com.nibss.dot_nibss_simulation_task.dto;
 
 import com.nibss.dot_nibss_simulation_task.enums.TransactionStatus;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class TransactionDto {
+    private Long id;
+    private String senderAccount;
+    private String receiverAccount;
     private String transactionReference;
-    private double amount;
-    private double transactionFee;
-    private double billedAmount;
+    private Double amount;
+    private Double transactionFee;
+    private Double billedAmount;
     private String description;
-    private LocalDateTime dateCreated;
+    private LocalDate dateCreated;
     private TransactionStatus status;
     private boolean commissionWorthy;
-    private double commission;
+    private Double commission;
 }
